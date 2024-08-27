@@ -1,16 +1,25 @@
 import XCTest
 
 public func XCTAssertContains(
-    _ haystack: String,
-    _ needle: String,
+    _ haystack: String?,
+    _ needle: String?,
     file: StaticString = #filePath,
     line: UInt = #line
 ) {
-    if haystack.contains(needle) {
+    guard let haystack else {
+        XCTFail("haystack nil", file: file, line: line)
         return
     }
 
-    XCTFail("Expected \"\(haystack)\" to contain \"\(needle)\"", file: file, line: line)
+    guard let needle else {
+        XCTFail("needle nil", file: file, line: line)
+        return
+    }
+    
+    guard haystack.contains(needle) else {
+        XCTFail("Expected \"\(haystack)\" to contain \"\(needle)\"", file: file, line: line)
+        return
+    }
 }
 
 public func XCTAssertStartsWith(

@@ -1,5 +1,6 @@
 import XCTest
 
+// Dummy class to help find
 class DummyClass {}
 
 public extension XCTestCase {
@@ -10,7 +11,7 @@ public extension XCTestCase {
         // Get the URL to the resource bundle within the bundle
         // of the current class.
         let resourceBundleURL = myBundle.url(
-            forResource: "UnitTestingUtilitiesResources.bundle",
+            forResource: "ScootysUnitTestingResources.bundle",
             withExtension: nil
         )!
 
