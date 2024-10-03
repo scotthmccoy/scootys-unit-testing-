@@ -28,7 +28,7 @@ final class SwiftInitKeyedEncodingContainer<Key> where Key: CodingKey {
         containerType: T.Type,
         key: Key
     ) -> T {
-        print("key: \(key)")
+        // print("key: \(key)")
 
         // Get the coding path with the new key added to it
         let codingPath = self.nestedCodingPath(forKey: key)
@@ -62,7 +62,7 @@ extension SwiftInitKeyedEncodingContainer: KeyedEncodingContainerProtocol {
     func encodeNil(
         forKey key: Key
     ) throws {
-        print("key: \(key)")
+        // print("key: \(key)")
         var container = self.nestedSingleValueContainer(forKey: key)
         try container.encodeNil()
     }
@@ -71,7 +71,7 @@ extension SwiftInitKeyedEncodingContainer: KeyedEncodingContainerProtocol {
         _ value: T,
         forKey key: Key
     ) throws where T: Encodable {
-        print("key: \(key), value: \(value)")
+        // print("key: \(key), value: \(value)")
         var container = self.nestedSingleValueContainer(forKey: key)
         try container.encode(value)
     }
@@ -80,7 +80,7 @@ extension SwiftInitKeyedEncodingContainer: KeyedEncodingContainerProtocol {
         _ value: T,
         forKey key: Key
     ) throws where T: Encodable {
-        print("key: \(key), value: \(value)")
+        // print("key: \(key), value: \(value)")
         var container = self.nestedSingleValueContainer(forKey: key)
         try container.encode(value)
     }
@@ -90,7 +90,7 @@ extension SwiftInitKeyedEncodingContainer: KeyedEncodingContainerProtocol {
         keyedBy keyType: NestedKey.Type,
         forKey key: Key
     ) -> KeyedEncodingContainer<NestedKey> where NestedKey: CodingKey {
-        print("key: \(key), keyType: \(keyType)")
+        // print("key: \(key), keyType: \(keyType)")
         let swiftInitKeyedEncodingContainer = make(
             containerType: SwiftInitKeyedEncodingContainer<NestedKey>.self,
             key: key
@@ -103,7 +103,7 @@ extension SwiftInitKeyedEncodingContainer: KeyedEncodingContainerProtocol {
     func nestedUnkeyedContainer(
         forKey key: Key
     ) -> UnkeyedEncodingContainer {
-        print("key: \(key)")
+        // print("key: \(key)")
         let swiftInitUnkeyedEncodingContainer = make(
             containerType: SwiftInitUnkeyedEncodingContainer.self,
             key: key
@@ -116,7 +116,7 @@ extension SwiftInitKeyedEncodingContainer: KeyedEncodingContainerProtocol {
     private func nestedSingleValueContainer(
         forKey key: Key
     ) -> SingleValueEncodingContainer {
-        print("key: \(key)")
+        // print("key: \(key)")
         let swiftInitUnkeyedEncodingContainer = make(
             containerType: SwiftInitSingleValueEncodingContainer.self,
             key: key
@@ -134,181 +134,181 @@ extension SwiftInitKeyedEncodingContainer: KeyedEncodingContainerProtocol {
     }
 
     func encode(_ value: Bool, forKey key: Key) throws {
-        print("key: \(key), value: \(value)")
+        // print("key: \(key), value: \(value)")
         var container = self.nestedSingleValueContainer(forKey: key)
         try container.encode(value)
     }
 
     func encode(_ value: Double, forKey key: Key) throws {
-        print("key: \(key), value: \(value)")
+        // print("key: \(key), value: \(value)")
         var container = self.nestedSingleValueContainer(forKey: key)
         try container.encode(value)
     }
 
     func encode(_ value: Float, forKey key: Key) throws {
-        print("key: \(key), value: \(value)")
+        // print("key: \(key), value: \(value)")
         var container = self.nestedSingleValueContainer(forKey: key)
         try container.encode(value)
     }
 
     func encode(_ value: Int, forKey key: Key) throws {
-        print("key: \(key), value: \(value)")
+        // print("key: \(key), value: \(value)")
         var container = self.nestedSingleValueContainer(forKey: key)
         try container.encode(value)
     }
 
     func encode(_ value: Int16, forKey key: Key) throws {
-        print("key: \(key), value: \(value)")
+        // print("key: \(key), value: \(value)")
         var container = self.nestedSingleValueContainer(forKey: key)
         try container.encode(value)
     }
 
     func encode(_ value: Int32, forKey key: Key) throws {
-        print("key: \(key), value: \(value)")
+        // print("key: \(key), value: \(value)")
         var container = self.nestedSingleValueContainer(forKey: key)
         try container.encode(value)
     }
 
     func encode(_ value: Int64, forKey key: Key) throws {
-        print("key: \(key), value: \(value)")
+        // print("key: \(key), value: \(value)")
         var container = self.nestedSingleValueContainer(forKey: key)
         try container.encode(value)
     }
 
     func encode(_ value: Int8, forKey key: Key) throws {
-        print("key: \(key), value: \(value)")
+        // print("key: \(key), value: \(value)")
         var container = self.nestedSingleValueContainer(forKey: key)
         try container.encode(value)
     }
 
     func encode(_ value: String, forKey key: Key) throws {
-        print("key: \(key), value: \(value)")
+        // print("key: \(key), value: \(value)")
         var container = self.nestedSingleValueContainer(forKey: key)
         try container.encode(value)
     }
 
     func encode(_ value: UInt, forKey key: Key) throws {
-        print("key: \(key), value: \(value)")
+        // print("key: \(key), value: \(value)")
         var container = self.nestedSingleValueContainer(forKey: key)
         try container.encode(value)
     }
 
     func encode(_ value: UInt16, forKey key: Key) throws {
-        print("key: \(key), value: \(value)")
+        // print("key: \(key), value: \(value)")
         var container = self.nestedSingleValueContainer(forKey: key)
         try container.encode(value)
     }
 
     func encode(_ value: UInt32, forKey key: Key) throws {
-        print("key: \(key), value: \(value)")
+        // print("key: \(key), value: \(value)")
         var container = self.nestedSingleValueContainer(forKey: key)
         try container.encode(value)
     }
 
     func encode(_ value: UInt64, forKey key: Key) throws {
-        print("key: \(key), value: \(value)")
+        // print("key: \(key), value: \(value)")
         var container = self.nestedSingleValueContainer(forKey: key)
         try container.encode(value)
     }
 
     func encode(_ value: UInt8, forKey key: Key) throws {
-        print("key: \(key), value: \(value)")
+        // // print("key: \(key), value: \(value)")
         var container = self.nestedSingleValueContainer(forKey: key)
         try container.encode(value)
     }
 
     func encodeConditional<T>(_ object: T, forKey key: Key) throws where T: AnyObject, T: Encodable {
-        print("key: \(key), object: \(object)")
+        // print("key: \(key), object: \(object)")
         var container = self.nestedSingleValueContainer(forKey: key)
         try container.encode(object)
     }
 
     func encodeIfPresent(_ value: Bool?, forKey key: Key) throws {
-        print("key: \(key), value: \(String(describing: value))")
+        // print("key: \(key), value: \(String(describing: value))")
         var container = self.nestedSingleValueContainer(forKey: key)
         try container.encode(value)
     }
 
     func encodeIfPresent(_ value: Double?, forKey key: Key) throws {
-        print("key: \(key), value: \(String(describing: value))")
+        // print("key: \(key), value: \(String(describing: value))")
         var container = self.nestedSingleValueContainer(forKey: key)
         try container.encode(value)
     }
 
     func encodeIfPresent(_ value: Float?, forKey key: Key) throws {
-        print("key: \(key), value: \(String(describing: value))")
+        // print("key: \(key), value: \(String(describing: value))")
         var container = self.nestedSingleValueContainer(forKey: key)
         try container.encode(value)
     }
 
     func encodeIfPresent(_ value: Int16?, forKey key: Key) throws {
-        print("key: \(key), value: \(String(describing: value))")
+        // print("key: \(key), value: \(String(describing: value))")
         var container = self.nestedSingleValueContainer(forKey: key)
         try container.encode(value)
     }
 
     func encodeIfPresent(_ value: Int32?, forKey key: Key) throws {
-        print("key: \(key), value: \(String(describing: value))")
+        // print("key: \(key), value: \(String(describing: value))")
         var container = self.nestedSingleValueContainer(forKey: key)
         try container.encode(value)
     }
 
     func encodeIfPresent(_ value: Int64?, forKey key: Key) throws {
-        print("key: \(key), value: \(String(describing: value))")
+        // print("key: \(key), value: \(String(describing: value))")
         var container = self.nestedSingleValueContainer(forKey: key)
         try container.encode(value)
     }
 
     func encodeIfPresent(_ value: Int8?, forKey key: Key) throws {
-        print("key: \(key), value: \(String(describing: value))")
+        // print("key: \(key), value: \(String(describing: value))")
         var container = self.nestedSingleValueContainer(forKey: key)
         try container.encode(value)
     }
 
     func encodeIfPresent(_ value: Int?, forKey key: Key) throws {
-        print("key: \(key), value: \(String(describing: value))")
+        // print("key: \(key), value: \(String(describing: value))")
         var container = self.nestedSingleValueContainer(forKey: key)
         try container.encode(value)
     }
 
     func encodeIfPresent(_ value: String?, forKey key: Key) throws {
-        print("key: \(key), value: \(String(describing: value))")
+        // print("key: \(key), value: \(String(describing: value))")
         var container = self.nestedSingleValueContainer(forKey: key)
         try container.encode(value)
     }
 
     func encodeIfPresent(_ value: UInt16?, forKey key: Key) throws {
-        print("key: \(key), value: \(String(describing: value))")
+        // print("key: \(key), value: \(String(describing: value))")
         var container = self.nestedSingleValueContainer(forKey: key)
         try container.encode(value)
     }
 
     func encodeIfPresent(_ value: UInt32?, forKey key: Key) throws {
-        print("key: \(key), value: \(String(describing: value))")
+        // print("key: \(key), value: \(String(describing: value))")
         var container = self.nestedSingleValueContainer(forKey: key)
         try container.encode(value)
     }
 
     func encodeIfPresent(_ value: UInt64?, forKey key: Key) throws {
-        print("key: \(key), value: \(String(describing: value))")
+        // print("key: \(key), value: \(String(describing: value))")
         var container = self.nestedSingleValueContainer(forKey: key)
         try container.encode(value)
     }
 
     func encodeIfPresent(_ value: UInt8?, forKey key: Key) throws {
-        print("key: \(key), value: \(String(describing: value))")
+        // print("key: \(key), value: \(String(describing: value))")
         var container = self.nestedSingleValueContainer(forKey: key)
         try container.encode(value)
     }
 
     func encodeIfPresent(_ value: UInt?, forKey key: Key) throws {
-        print("key: \(key), value: \(String(describing: value))")
+        // print("key: \(key), value: \(String(describing: value))")
         var container = self.nestedSingleValueContainer(forKey: key)
         try container.encode(value)
     }
 
     func encodeIfPresent<T>(_ value: T?, forKey key: Key) throws where T: Encodable {
-        print("key: \(key), value: \(String(describing: value))")
+        // print("key: \(key), value: \(String(describing: value))")
         var container = self.nestedSingleValueContainer(forKey: key)
         try container.encode(value)
     }

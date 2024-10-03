@@ -1,8 +1,8 @@
 Pod::Spec.new do |s|
     s.name         = "Scootys-Unit-Testing"
-    s.version      = "1.0.1"
+    s.version      = "1.0.2"
     s.summary      = "Collection of Unit Testing Utilities"
-    s.homepage     = "http://vrtcal.com"
+    s.homepage     = "http://scottsoft.com"
     s.license = { :type => 'Copyright', :text => <<-LICENSE
                    Copyright 2024 Scott McCoy
                   LICENSE
