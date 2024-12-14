@@ -44,8 +44,8 @@ public enum XCTAssertEqualEncodableOption {
     
     var makeChangesTo: String {
         switch self {
-            case .assumeActualIsCorrect: return "actual"
-            case .assumeExpectedIsCorrect: return "expected"
+            case .assumeActualIsCorrect: return "expected"
+            case .assumeExpectedIsCorrect: return "actual"
         }
     }
 }
@@ -83,9 +83,10 @@ public func XCTAssertEqualEncodable<T: Encodable>(
     var collectionDifference: CollectionDifference<Substring>
     switch option {
         case .assumeActualIsCorrect:
-            collectionDifference = expectedInitStatementLines.difference(
-                from: actualInitStatementLines
+            collectionDifference = actualInitStatementLines.difference(
+                from: expectedInitStatementLines
             )
+
         case .assumeExpectedIsCorrect:
             collectionDifference = expectedInitStatementLines.difference(
                 from: actualInitStatementLines
