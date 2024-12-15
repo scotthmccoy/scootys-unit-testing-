@@ -30,7 +30,7 @@ public enum LocalCodableHelperError: Error, CustomStringConvertible, Equatable {
 }
 
 class LocalCodableHelper {
-
+    
     // MARK: Data
     public func encode <T: Encodable>(
         value: T
